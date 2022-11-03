@@ -103,6 +103,7 @@ def main():
                   encoding='utf8') as outfile:
             jsonFile = json.dumps(jsonResult, indent=4, sort_keys=True, ensure_ascii=False)
             outfile.write(jsonFile)
+
         # 파일저장 2 : csv 파일
         columns = ["입국자국가", "국가코드", "입국연월", "입국자 수"]
         result_df = pd.DataFrame(result, columns=columns)
