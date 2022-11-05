@@ -51,8 +51,8 @@ def getService(apiType, dvsd):
     result = []
     year = ''
     dvsd = ''
-    # totalCount = ''
     sum = ''
+    # totalCount = ''
     jsonData = getItem(apiType, dvsd)
 
     if (jsonData['resultCode'] == '00'):
@@ -62,7 +62,7 @@ def getService(apiType, dvsd):
         else:
             print(json.dumps(jsonData, indent=4,
                                  sort_keys=True, ensure_ascii=False))
-            for i in range(1,85):
+            for i in range(0,85):
                 year = jsonData['items'][i]['year']
                 dvsd = jsonData['items'][i]['dvsd']
                 # totalCount = jsonData['totalCount']
@@ -85,15 +85,9 @@ def main():
 
     result, sum, dvsd, year = getService(apiType, dvsd)
 
-    columns = ["년도", "지역", "개수"]
+    columns = ["년도", "지역", "의료 종사자 수"]
     result = pd.DataFrame(result, columns=columns)
     result.to_csv('sample.csv', index=False, encoding='utf-8')
-
-
-
-
-
-
 
 
 
