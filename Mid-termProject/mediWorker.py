@@ -82,7 +82,7 @@ def main():
 
     columns = ["년도", "지역", "의료 종사자 수"]
     result = pd.DataFrame(result, columns=columns)
-    result.to_csv('sample.csv', index=False, encoding='utf-8')
+    result.to_csv('workers.csv', index=False, encoding='utf-8')
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -104,6 +104,9 @@ def main():
             plt.title(str(num + 2015) + "년도 보건의료기관 소재지별 의료인력수")
             plt.xticks(x, rg)
             plt.show()
+            
+    rc('font', family='AppleGothic')
+    plt.rcParams['axes.unicode_minus'] = False
 
     graph1(mpl)
 
@@ -128,6 +131,9 @@ def main():
         plt.xlabel('년도')
         plt.ylabel('의료 인력 수')
         plt.show()
+
+    rc('font', family='AppleGothic')
+    plt.rcParams['axes.unicode_minus'] = False
 
     graph2(mpl)
 
