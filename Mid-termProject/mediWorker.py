@@ -82,7 +82,7 @@ def main():
 
     columns = ["년도", "지역", "의료 종사자 수"]
     result = pd.DataFrame(result, columns=columns)
-    result.to_csv('workers.csv', index=False, encoding='utf-8')
+    result.to_csv('./workers.csv', index=False, encoding='utf-8')
 
     import matplotlib.pyplot as plt
     import numpy as np
