@@ -94,7 +94,7 @@ def main():
             for j in i:
                 tmp = [j[1], int(j[2])]
                 lst.append(tmp)
-                lst.sort(key=lambda x: x[0])
+                lst.sort(key=lambda x: x[1])
             rg, nm = [], []
             for i in lst:
                 rg.append(i[0])
@@ -104,10 +104,9 @@ def main():
             plt.title(str(num + 2015) + "년도 보건의료기관 소재지별 의료인력수")
             plt.xticks(x, rg)
             plt.show()
-            
+
     rc('font', family='AppleGothic')
     plt.rcParams['axes.unicode_minus'] = False
-
     graph1(mpl)
 
     def graph2(mpl):
@@ -134,7 +133,6 @@ def main():
 
     rc('font', family='AppleGothic')
     plt.rcParams['axes.unicode_minus'] = False
-
     graph2(mpl)
 
 
